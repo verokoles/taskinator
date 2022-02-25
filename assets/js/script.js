@@ -46,6 +46,7 @@ var createTaskEl = function(taskDataObj) {
   taskInfoEl.className = "task-info";
   taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>";
   listItemEl.appendChild(taskInfoEl);
+  
 //add values as a property
 taskDataObj.id = taskIdCounter;
 
@@ -174,6 +175,31 @@ var taskButtonHandler = function(event) {
     localStorage.setItem("tasks", tasks);
   }
 };
+// retreive tasks from localStorage
+var loadTasks = function() {
+  var savedTasks = localStorage.getItem("tasks");
+  
+  if (!tasks) {
+    tasks = [];
+    return false;
+  }
+  savedTasks = JSON.parse(savedTasks);
+  //loop through savedTasks arrya
+  for(var i = 0; i < savedTasks.length; i++) {
+    //pass each task object into the 'creatTaskEl()' function
+    createTaskEl(savedTasks[i]);
+  }
+
+}
+var taskActionsEl = createTaskActions(tasks[i].id) 
+if (tasks[i].status === "to-do") {
+  listItemEl.querySelector("select[name='status-change']").selectedIndex;
+  (tasks[i].status === 0);
+  listItemEl.appendChild(tasksToDoEl) 
+taskIdCounter + 1;
+}
+
+
 var editTask = function(taskId) {
   console.log(taskId);
   //get task list item element
@@ -227,4 +253,4 @@ var deleteTask = function(taskId) {
 //for changing status
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
 
-
+loadTasks();

@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <header>
     <h1 class="page-title">Taskinator</h1>
     <p>Click the button below to add a new task!</p>
@@ -19,7 +20,7 @@
       </div>
       <div class="form-group">
         <select name="task-type" class="select-dropdown">
-          <option value="" disabled selected>Pick a task type</option>
+          <option value="" selected disabled>Pick a task type</option>
           <option value="Print">Print</option>
           <option value="Web">Web</option>
           <option value="Mobile">Mobile</option>
@@ -32,29 +33,31 @@
   </header>
 
   <main class="page-content" id="page-content">
-    <!--Tasks to Do-->
+    <!-- Tasks To Do -->
     <section class="task-list-wrapper">
       <h2 class="list-title">Tasks To Do</h2>
       <ul class="task-list" id="tasks-to-do"></ul>
     </section>
-    <!--Task in progress-->
+
+    <!-- Tasks In Progress -->
     <section class="task-list-wrapper">
       <h2 class="list-title">Tasks In Progress</h2>
-    <ul class="task-list" id="tasks-in-progress"></ul>
-  </section>
+      <ul class="task-list" id="tasks-in-progress"></ul>
+    </section>
 
-  <!--Tasks completed-->
-  <section class="task-list-wrapper">
-    <h2 class="list-title">Tasks Completed</h2>
-    <ul class="task-list" id="tasks-completed"></ul>
-  </section>
-
+    <!-- Tasks Completed -->
+    <section class="task-list-wrapper">
+      <h2 class="list-title">Tasks Completed</h2>
+      <ul class="task-list" id="tasks-completed"></ul>
+    </section>
   </main>
 
   <footer>
     &copy;2020 by Taskinator
   </footer>
-  <script src="assets/js/script.js"></script>
+
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
+
